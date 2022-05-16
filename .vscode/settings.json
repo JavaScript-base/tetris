@@ -1,0 +1,8 @@
+{
+    "compile-hero.disable-compile-files-on-did-save-code": true,
+    "editor.quickSuggestions": {
+        "other": "on",
+        "comments": "on",
+        "strings": "on"
+    }
+}
