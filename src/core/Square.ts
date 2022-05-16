@@ -18,11 +18,14 @@ export class Square {
 
     public set viewer(value) {
         this._viewer = value;
+        this._viewer?.show();
     }
 
     public set point(val: IPoint) {
         this._point = val;
-        this._viewer?.show()
+        if(this.viewer) {
+            this.viewer.show()
+        }
     }
 
     public get color() {
