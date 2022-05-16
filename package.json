@@ -1,0 +1,32 @@
+{
+  "name": "tetris",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode=production",
+    "dev": "webpack-dev-server --mode=production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Murraya-paniculata/tetris.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Murraya-paniculata/tetris/issues"
+  },
+  "homepage": "https://github.com/Murraya-paniculata/tetris#readme",
+  "dependencies": {
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "html-webpack-plugin": "^5.5.0",
+    "ts-loader": "^9.3.0",
+    "typescript": "^4.6.4",
+    "webpack-dev-server": "^4.9.0"
+  }
+}
