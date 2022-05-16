@@ -1,28 +1,35 @@
-import my from './mymodule';
-import { Square } from './core/Square'
-import { IViewer } from './core/types';
-
-class SquareConsoleViewer implements IViewer {
-    constructor(private square: Square) {
-
-    }
-    show(): void {
-        console.log(this.square.point, this.square.color);
-    }
-    remove(): void {
-        throw new Error('Method not implemented.');
-    }
-
-}
+import { Square } from "./core/Square";
+import { SquareViewer } from "./core/viewer/SquareViewer";
+import $ from 'jquery'
 
 const square = new Square({
-    x: 1,
-    y: 2
-}, 'red')
+    x: 1, y: 1
+}, 'red');
 
-square.viewer = new SquareConsoleViewer(square);
+square.viewer = new SquareViewer(square, $("#root"));
 
-square.point = {
-    x: 5,
-    y: 6
-}
+square.viewer.show();
+
+$("#btnDown").click(() => {
+    square.point = {
+        x: square.point.x,
+        y: square.point.y + 1
+    }
+})
+
+$("#btnRight").click(() => {
+    square.point = {
+        x: square.point.x + 1,
+        y: square.point.y
+    }
+})
+
+$("#btnRemove").click(() => {
+    if(square.viewer) {
+        square.viewer.remove();
+    }
+})
+
+$("#btnShow").click(() => {
+    square.viewer = new SquareViewer(square, $("#root"));
+})
