@@ -1,35 +1,37 @@
-import { Square } from "./core/Square";
 import { SquareViewer } from "./core/viewer/SquareViewer";
 import $ from 'jquery'
+import { createTeris } from "./core/Teris";
 
-const square = new Square({
-    x: 1, y: 1
-}, 'red');
+const group = createTeris({x: 2, y: 2})
 
-square.viewer = new SquareViewer(square, $("#root"));
-
-square.viewer.show();
+group.squares.forEach(square => {
+    square.viewer = new SquareViewer(square, $("#root"));
+});
 
 $("#btnDown").click(() => {
-    square.point = {
-        x: square.point.x,
-        y: square.point.y + 1
+    group.centerPoint = {
+        x: group.centerPoint.x,
+        y: group.centerPoint.y + 1
     }
 })
 
 $("#btnRight").click(() => {
-    square.point = {
-        x: square.point.x + 1,
-        y: square.point.y
+    group.centerPoint = {
+        x: group.centerPoint.x + 1,
+        y: group.centerPoint.y
     }
 })
 
 $("#btnRemove").click(() => {
-    if(square.viewer) {
-        square.viewer.remove();
-    }
+    group.squares.forEach(square => {
+        if(square.viewer) {
+            square.viewer.remove();
+        }
+    })
 })
 
 $("#btnShow").click(() => {
-    square.viewer = new SquareViewer(square, $("#root"));
+    group.squares.forEach(square => {
+        square.viewer = new SquareViewer(square, $("#root"));
+    })
 })
