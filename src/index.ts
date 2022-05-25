@@ -1,6 +1,8 @@
 import { SquareViewer } from "./core/viewer/SquareViewer";
 import $ from 'jquery'
 import { createTeris } from "./core/Teris";
+import { TerisRules } from "./core/TerisRules";
+import { MoveDirection } from "./core/types";
 
 const group = createTeris({x: 2, y: 2})
 
@@ -9,17 +11,14 @@ group.squares.forEach(square => {
 });
 
 $("#btnDown").click(() => {
-    group.centerPoint = {
-        x: group.centerPoint.x,
-        y: group.centerPoint.y + 1
-    }
+    TerisRules.moveDirectly(group, MoveDirection.down);
 })
 
 $("#btnRight").click(() => {
-    group.centerPoint = {
-        x: group.centerPoint.x + 1,
-        y: group.centerPoint.y
-    }
+    TerisRules.move(group, MoveDirection.right);
+})
+$("#btnLeft").click(() => {
+    TerisRules.move(group, MoveDirection.left);
 })
 
 $("#btnRemove").click(() => {
