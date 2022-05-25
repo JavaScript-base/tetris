@@ -84,7 +84,6 @@ export const colors = [
     'green',
     'orange',
     'blue',
-    '#fff',
     '#f00'
 ]
 

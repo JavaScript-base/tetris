@@ -3,7 +3,7 @@ import { IViewer } from "../types";
 import $ from 'jquery';
 import PageConfig from "./PageConfig";
 
-export class SquareViewer implements IViewer {
+export class SquarePageViewer implements IViewer {
 
     private dom?: JQuery<HTMLElement>;
     private isRemove?: boolean = false;
