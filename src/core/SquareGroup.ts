@@ -21,6 +21,10 @@ export class SquareGroup {
         })
     }
 
+    public get shape() {
+        return this._shape
+    }
+
     private readonly _squares: Square[]
     constructor(private _shape: Shape, private _centerPoint: IPoint, private _color: string){
         this._squares = _shape.map((item) => new Square({x: item.x + _centerPoint.x, y: item.y + _centerPoint.y}, _color));
