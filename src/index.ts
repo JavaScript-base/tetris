@@ -11,7 +11,7 @@ group.squares.forEach(square => {
 });
 
 $("#btnDown").click(() => {
-    TerisRules.moveDirectly(group, MoveDirection.down);
+    TerisRules.move(group, MoveDirection.down);
 })
 
 $("#btnRight").click(() => {
