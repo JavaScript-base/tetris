@@ -1,7 +1,7 @@
 import { SquareViewer } from "./core/viewer/SquareViewer";
 import $ from 'jquery'
 import { createTeris } from "./core/Teris";
-import { TerisRules } from "./core/TerisRules";
+ import { TerisRules } from "./core/TerisRules";
 import { MoveDirection } from "./core/types";
 
 const group = createTeris({x: 2, y: 2})
@@ -19,6 +19,10 @@ $("#btnRight").click(() => {
 })
 $("#btnLeft").click(() => {
     TerisRules.move(group, MoveDirection.left);
+})
+
+$("#rotateClock").click(() => {
+    group.rotate();
 })
 
 $("#btnRemove").click(() => {
