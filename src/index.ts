@@ -22,7 +22,7 @@ $("#btnLeft").click(() => {
 })
 
 $("#rotateClock").click(() => {
-    group.rotate();
+    TerisRules.rotate(group);
 })
 
 $("#btnRemove").click(() => {
